@@ -14,7 +14,6 @@ namespace EBT\Fastc;
 use Guzzle\Service\Client as GuzzleClient;
 use Guzzle\Service\ClientInterface as GuzzleClientInterface;
 use Guzzle\Service\Description\ServiceDescription as GuzzleServiceDescription;
-use EBT\Fastc\Listener\StatusCodeListener;
 
 /**
  * Client
@@ -60,5 +59,16 @@ abstract class Client
         foreach ($subscribers as $subscriber) {
             $this->client->addSubscriber($subscriber);
         }
+    }
+
+    /**
+     * @param string|array $config  File to build or array of operation information
+     * @param array        $options Service description factory options
+     *
+     * @return GuzzleServiceDescription
+     */
+    protected static function getServiceDescription($config, array $options = array())
+    {
+        return GuzzleServiceDescription::factory($config, $options);
     }
 }
