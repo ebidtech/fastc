@@ -17,6 +17,7 @@ use Guzzle\Service\Description\ServiceDescription as GuzzleServiceDescription;
 use JMS\Serializer\SerializerBuilder;
 use JMS\Serializer\SerializerInterface;
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
+use EBT\ConfigLoader\YamlFileLoader;
 
 /**
  * Client
@@ -70,6 +71,11 @@ abstract class Client
      */
     final protected function getServiceDescription($config, array $options = array())
     {
+        // Adds support for YML
+        if (is_string($config) && pathinfo($config, PATHINFO_EXTENSION) === 'yml') {
+            $config = (new YamlFileLoader())->load($config);
+        }
+
         return GuzzleServiceDescription::factory($config, $options);
     }
 

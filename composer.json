@@ -15,7 +15,8 @@
     "require": {
         "php": ">=5.4.0",
         "guzzle/guzzle": ">=3.3",
-        "jms/serializer": "0.14.0"
+        "jms/serializer": "0.14.0",
+        "ebidtech/config-loader": "1.1.*"
     },
     "require-dev": {
         "phpunit/phpunit": "3.7.*",
