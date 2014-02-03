@@ -1,0 +1,29 @@
+{
+    "name": "ebidtech/fastc",
+    "type": "library",
+    "description": "A light layer on top of Guzzle service descriptions that enables fast HTTP client development",
+    "keywords": ["php", "library", "guzzle", "http", "client", "service"],
+    "homepage": "http://github.com/ebidtech/fastc",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Ebidtech",
+            "email": "developers@ebidtech.com"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require": {
+        "php": ">=5.4.0",
+        "guzzle/guzzle": ">=3.3",
+        "jms/serializer": "0.14.0"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "3.7.*",
+        "squizlabs/php_codesniffer": "~1.5.0",
+        "phpmd/phpmd": "~1.5.0",
+        "satooshi/php-coveralls": "dev-master"
+    },
+    "autoload": {
+        "psr-0": { "EBT\\Fastc": "src/" }
+    }
+}
