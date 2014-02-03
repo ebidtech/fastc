@@ -16,6 +16,7 @@ use Guzzle\Service\ClientInterface as GuzzleClientInterface;
 use Guzzle\Service\Description\ServiceDescription as GuzzleServiceDescription;
 use JMS\Serializer\SerializerBuilder;
 use JMS\Serializer\SerializerInterface;
+use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 
 /**
  * Client
@@ -54,13 +55,11 @@ abstract class Client
     }
 
     /**
-     * @param array $subscribers
+     * @param EventSubscriberInterface $subscriber
      */
-    final public function addSubscribers(array $subscribers)
+    final public function addSubscriber(EventSubscriberInterface $subscriber)
     {
-        foreach ($subscribers as $subscriber) {
-            $this->client->addSubscriber($subscriber);
-        }
+        $this->client->addSubscriber($subscriber);
     }
 
     /**
