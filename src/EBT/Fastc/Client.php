@@ -14,6 +14,8 @@ namespace EBT\Fastc;
 use Guzzle\Service\Client as GuzzleClient;
 use Guzzle\Service\ClientInterface as GuzzleClientInterface;
 use Guzzle\Service\Description\ServiceDescription as GuzzleServiceDescription;
+use JMS\Serializer\SerializerBuilder;
+use JMS\Serializer\SerializerInterface;
 
 /**
  * Client
@@ -67,8 +69,19 @@ abstract class Client
      *
      * @return GuzzleServiceDescription
      */
-    protected static function getServiceDescription($config, array $options = array())
+    final protected function getServiceDescription($config, array $options = array())
     {
         return GuzzleServiceDescription::factory($config, $options);
+    }
+
+    /**
+     * @param string $dir
+     * @param string $namespacePrefix
+     *
+     * @return SerializerInterface
+     */
+    final protected function getSerializer($dir, $namespacePrefix = '')
+    {
+        return SerializerBuilder::create()->addMetadataDir($dir, $namespacePrefix)->build();
     }
 }
