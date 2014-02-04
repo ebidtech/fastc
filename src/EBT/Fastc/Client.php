@@ -35,14 +35,9 @@ abstract class Client
      */
     public function __construct(GuzzleServiceDescription $description, array $config = array())
     {
-        $this->client = GuzzleClient::factory(array_merge($this->getDefaultConfig(), $config));
+        $this->client = GuzzleClient::factory($config);
         $this->client->setDescription($description);
     }
-
-    /**
-     * @return array
-     */
-    abstract protected function getDefaultConfig();
 
     /**
      * @param $userAgent
