@@ -87,7 +87,7 @@ abstract class Client
      *
      * @return SerializerInterface
      */
-    final protected function getSerializer($dir, $namespacePrefix = '')
+    protected function getSerializer($dir, $namespacePrefix = '')
     {
         return SerializerBuilder::create()->addMetadataDir($dir, $namespacePrefix)->build();
     }
