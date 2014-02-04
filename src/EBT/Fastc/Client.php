@@ -42,10 +42,7 @@ abstract class Client
     /**
      * @return array
      */
-    protected function getDefaultConfig()
-    {
-        return array();
-    }
+    abstract protected function getDefaultConfig();
 
     /**
      * @param $userAgent
@@ -73,10 +70,20 @@ abstract class Client
     {
         // Adds support for YML
         if (is_string($config) && pathinfo($config, PATHINFO_EXTENSION) === 'yml') {
-            $config = (new YamlFileLoader())->load($config);
+            $config = $this->readYaml($config);
         }
 
         return GuzzleServiceDescription::factory($config, $options);
+    }
+
+    /**
+     * @param string $path
+     *
+     * @return array
+     */
+    final protected function readYaml($path)
+    {
+        return (new YamlFileLoader())->load($path);
     }
 
     /**
