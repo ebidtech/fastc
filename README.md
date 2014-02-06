@@ -1,8 +1,8 @@
 # Fastc #
 
-[![Latest Stable Version](https://poser.pugx.org/ebidtech/fastc/v/stable.png)](https://packagist.org/packages/ebidtech/fastc) [![Build Status](https://travis-ci.org/ebidtech/fastc.png?branch=master)](https://travis-ci.org/ebidtech/fastc) [![Scrutinizer Quality Score](https://scrutinizer-ci.com/g/ebidtech/fastc/badges/quality-score.png?s=0a1a7106c41557a6201f163c84a7f02a820759a1)](https://scrutinizer-ci.com/g/ebidtech/fastc/) [![Dependency Status](https://www.versioneye.com/user/projects/52f3bd0bec1375381f00008f/badge.png)](https://www.versioneye.com/user/projects/52f3bd0bec1375381f00008f)
+[![Latest Stable Version](https://poser.pugx.org/ebidtech/fastc/v/stable.png)](https://packagist.org/packages/ebidtech/fastc) [![Build Status](https://travis-ci.org/ebidtech/fastc.png?branch=master)](https://travis-ci.org/ebidtech/fastc) [![Coverage Status](https://coveralls.io/repos/ebidtech/fastc/badge.png?branch=master)](https://coveralls.io/r/ebidtech/fastc?branch=master) [![Scrutinizer Quality Score](https://scrutinizer-ci.com/g/ebidtech/fastc/badges/quality-score.png?s=0a1a7106c41557a6201f163c84a7f02a820759a1)](https://scrutinizer-ci.com/g/ebidtech/fastc/) [![Dependency Status](https://www.versioneye.com/user/projects/52f3bd0bec1375381f00008f/badge.png)](https://www.versioneye.com/user/projects/52f3bd0bec1375381f00008f)
 
-A light layer on top of Guzzle service descriptions that enables fast HTTP client development.
+A light layer on top of Guzzle service descriptions that enables faster HTTP client development.
 
 ## Requirements ##
 
