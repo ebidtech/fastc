@@ -1,5 +1,7 @@
 # Fastc #
 
+[![Latest Stable Version](https://poser.pugx.org/ebidtech/fastc/v/stable.png)](https://packagist.org/packages/ebidtech/fastc) [![Dependency Status](https://www.versioneye.com/user/projects/52f3bd0bec1375381f00008f/badge.png)](https://www.versioneye.com/user/projects/52f3bd0bec1375381f00008f)
+
 A light layer on top of Guzzle service descriptions that enables fast HTTP client development.
 
 ## Requirements ##
