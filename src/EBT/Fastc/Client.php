@@ -61,11 +61,11 @@ abstract class Client implements ClientInterface
      *
      * @return GuzzleServiceDescription
      */
-    final protected function getServiceDescription($config, array $options = array())
+    protected function getServiceDescription($config, array $options = array())
     {
         // Adds support for YML
         if (is_string($config) && pathinfo($config, PATHINFO_EXTENSION) === 'yml') {
-            $config = $this->readYaml($config);
+            $config = static::readYaml($config);
         }
 
         return GuzzleServiceDescription::factory($config, $options);
@@ -76,7 +76,7 @@ abstract class Client implements ClientInterface
      *
      * @return array
      */
-    final protected function readYaml($path)
+    protected function readYaml($path)
     {
         return (new YamlFileLoader())->load($path);
     }

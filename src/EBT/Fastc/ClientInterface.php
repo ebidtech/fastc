@@ -12,6 +12,7 @@
 namespace EBT\Fastc;
 
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
+use Guzzle\Service\Description\ServiceDescription as GuzzleServiceDescription;
 
 /**
  * ClientInterface

@@ -1,0 +1,4 @@
+EBT\Fastc\Tests\Model\ModelResponse:
+    properties:
+        type:
+            type: string

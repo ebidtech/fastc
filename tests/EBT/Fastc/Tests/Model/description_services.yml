@@ -1,0 +1,11 @@
+name: Just a test
+baseUrl: http://test.local
+description: Just a test description
+operations:
+    getTest:
+        httpMethod: GET
+        uri: test
+        responseClass: 'EBT\Fastc\Tests\Model\ModelResponse'
+    getTest2:
+        httpMethod: GET
+        uri: test

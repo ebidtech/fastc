@@ -54,9 +54,6 @@ class ParseResponseListener implements EventSubscriberInterface
         $command = $event['command'];
 
         $className = $command->getOperation()->getResponseClass();
-        if (!class_exists($className)) {
-            throw new GuzzleResponseClassException(sprintf('%s must exists.', $className));
-        }
 
         // if the guzzle way fromCommand is present don't do anything
         if (!method_exists($className, 'fromCommand')) {

@@ -14,6 +14,7 @@ namespace EBT\Fastc\Listener;
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 use Guzzle\Common\Event as GuzzleEvent;
 use Guzzle\Service\Command\CommandInterface as GuzzleCommandInterface;
+use EBT\Fastc\Exception\RuntimeException;
 
 /**
  * StatusCodeListener
@@ -52,14 +53,11 @@ class StatusCodeListener implements EventSubscriberInterface
         $statusCode = $response->getStatusCode();
 
         if (!in_array($statusCode, $acceptedStatusCodes)) {
-            throw new \RuntimeException(
-                sprintf(
-                    'Operation "%s" expected status code: "%s" got: "%s" and body: %s',
-                    $command->getOperation()->getName(),
-                    implode(',', $acceptedStatusCodes),
-                    $statusCode,
-                    $response->getBody()
-                )
+            throw RuntimeException::operationExpectedStatusCode(
+                $command->getOperation()->getName(),
+                $acceptedStatusCodes,
+                $statusCode,
+                $response->getBody()
             );
         }
     }
