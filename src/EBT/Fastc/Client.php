@@ -22,7 +22,7 @@ use EBT\ConfigLoader\YamlFileLoader;
 /**
  * Client
  */
-abstract class Client
+abstract class Client implements ClientInterface
 {
     /**
      * @var GuzzleClientInterface
@@ -40,7 +40,7 @@ abstract class Client
     }
 
     /**
-     * @param $userAgent
+     * {@inheritdoc}
      */
     final public function setUserAgent($userAgent)
     {
@@ -48,7 +48,7 @@ abstract class Client
     }
 
     /**
-     * @param EventSubscriberInterface $subscriber
+     * {@inheritdoc}
      */
     final public function addSubscriber(EventSubscriberInterface $subscriber)
     {
