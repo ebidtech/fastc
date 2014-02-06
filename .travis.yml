@@ -4,8 +4,13 @@ php:
   - 5.4
   - 5.5
 
+env:
+  - GUZZLE_VERSION=3.7.*
+  - GUZZLE_VERSION=3.8.*
+
 before_script:
   - curl -s http://getcomposer.org/installer | php
+  - php composer.phar require guzzle/guzzle:${GUZZLE_VERSION} --no-update
   - php composer.phar install --dev
 
 script:
