@@ -14,7 +14,7 @@
     "minimum-stability": "stable",
     "require": {
         "php": ">=5.4.0",
-        "guzzle/guzzle": ">=3.3",
+        "guzzle/guzzle": ">=3.7.0,<3.9.0",
         "jms/serializer": "0.14.0",
         "ebidtech/config-loader": "1.1.*"
     },
