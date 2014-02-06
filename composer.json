@@ -1,7 +1,7 @@
 {
     "name": "ebidtech/fastc",
     "type": "library",
-    "description": "A light layer on top of Guzzle service descriptions that enables fast HTTP client development",
+    "description": "A light layer on top of Guzzle service descriptions that enables faster HTTP client development.",
     "keywords": ["php", "library", "guzzle", "http", "client", "service"],
     "homepage": "http://github.com/ebidtech/fastc",
     "license": "MIT",
