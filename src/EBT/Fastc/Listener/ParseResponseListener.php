@@ -16,6 +16,7 @@ use Guzzle\Service\Command\CreateResponseClassEvent as GuzzleCreateResponseClass
 use Guzzle\Service\Command\CommandInterface as GuzzleCommandInterface;
 use Guzzle\Service\Exception\ResponseClassException as GuzzleResponseClassException;
 use JMS\Serializer\SerializerInterface;
+use Guzzle\Service\Description\OperationInterface;
 
 /**
  * ParseResponseListener
@@ -53,7 +54,7 @@ class ParseResponseListener implements EventSubscriberInterface
         /** @var GuzzleCommandInterface $command */
         $command = $event['command'];
 
-        $className = $command->getOperation()->getResponseClass();
+        $className = $this->getResponseClass($command->getOperation());
 
         // if the guzzle way fromCommand is present don't do anything
         if (!method_exists($className, 'fromCommand')) {
@@ -61,5 +62,17 @@ class ParseResponseListener implements EventSubscriberInterface
                 $this->serializer->deserialize($command->getResponse()->getBody(), $className, 'json')
             );
         }
+    }
+
+    /**
+     * This is a good extension point if you need something fancier
+     *
+     * @param OperationInterface $operation
+     *
+     * @return string
+     */
+    protected function getResponseClass(OperationInterface $operation)
+    {
+        return $operation->getResponseClass();
     }
 }
