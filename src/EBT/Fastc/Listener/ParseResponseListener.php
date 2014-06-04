@@ -54,7 +54,7 @@ class ParseResponseListener implements EventSubscriberInterface
         /** @var GuzzleCommandInterface $command */
         $command = $event['command'];
 
-        $className = $this->getResponseClass($command->getOperation());
+        $className = $this->getClassName($command);
 
         // if the guzzle way fromCommand is present don't do anything
         if (!method_exists($className, 'fromCommand')) {
@@ -67,12 +67,12 @@ class ParseResponseListener implements EventSubscriberInterface
     /**
      * This is a good extension point if you need something fancier
      *
-     * @param OperationInterface $operation
+     * @param GuzzleCommandInterface $command
      *
      * @return string
      */
-    protected function getResponseClass(OperationInterface $operation)
+    protected function getClassName(GuzzleCommandInterface $command)
     {
-        return $operation->getResponseClass();
+        return $command->getOperation()->getResponseClass();
     }
 }
